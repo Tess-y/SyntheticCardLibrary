@@ -1,0 +1,24 @@
+{
+    "name": "SyntheticCardLibrary",
+    "references": [
+        "CardChoiceSpawnUniqueCardPatch",
+        "ModdingUtils",
+        "TabInfo",
+        "UnboundLib",
+        "GameSaver"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "0Harmony.dll",
+        "Assembly-CSharp.dll",
+        "BepInEx.dll",
+        "Photon3Unity3D.dll",
+        "PhotonUnityNetworking.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": []
+}
