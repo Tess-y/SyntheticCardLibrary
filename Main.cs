@@ -3,6 +3,7 @@ using HarmonyLib;
 using SyntheticCardLibrary.Utilities;
 using System.Collections.Generic;
 using System.Reflection;
+using UnboundLib;
 using UnityEditor.VersionControl;
 using UnityEngine;
 
@@ -20,6 +21,7 @@ namespace SyntheticCardLibrary {
         public const string Version = "0.1.0";
         internal static AssetBundle Assets;
         internal static Harmony harmony;
+        internal static GameObject test;
         public static Main instance { get; private set; }
 
         void Awake() {
@@ -36,6 +38,8 @@ namespace SyntheticCardLibrary {
                     UnityEngine.Debug.LogWarning("WARNING GAMESAVER DETECTED, LOADING SAVES WITH SYNTHEDIC CARDS MAY RESOLT IN CARD LOSS");
                 UnityEngine.Debug.LogWarning("////////////////////////////");
             }
+            test = new GameObject("test gameobject NO-BUILD");
+            
         }
     }
 }

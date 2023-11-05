@@ -17,7 +17,8 @@ namespace SyntheticCardLibrary.Core {
                 throw new SyntheticCardError("Using baseInfo that does not extend SyntheticCard");
             GameObject location = PoolHandler.GetNextHolder(false, temparary);
             SyntheticCard card = (SyntheticCard)location.GetComponent(baseInfo ?? typeof(SyntheticCard));
-            card.source = Assembly.GetCallingAssembly().FullName.Split(',')[0];
+            card.source = Assembly.GetCallingAssembly().FullName;
+            card.source = card.source.Substring(0, card.source.IndexOf(","));
             card.cardName = name;
             card.rarity = rarity;
             card.colorTheme = theme;
@@ -26,7 +27,7 @@ namespace SyntheticCardLibrary.Core {
             card.temperary = temparary;
             card.artFunction = cardArtGenerator;
             card.allowMultiple = allowMultiple;
-
+            
 
             buildCallback?.Invoke(card);
             location.GetComponents<MonoBehaviour>().Where(c => !c.GetType().IsAssignableFrom(typeof(SyntheticCard))).ToList().ForEach(UnityEngine.Object.Destroy);
@@ -41,7 +42,8 @@ namespace SyntheticCardLibrary.Core {
                 throw new SyntheticCardError("Using baseInfo that does not extend SyntheticCard");
             GameObject location = PoolHandler.GetNextHolder(true, temparary);
             SyntheticCard card = (SyntheticCard)location.GetComponent(baseInfo ?? typeof(SyntheticCard));
-            card.source = Assembly.GetCallingAssembly().FullName.Split(',')[0];
+            card.source = Assembly.GetCallingAssembly().FullName;
+            card.source = card.source.Substring(0, card.source.IndexOf(","));
             card.cardName = name;
             card.rarity = rarity;
             card.colorTheme = theme;
